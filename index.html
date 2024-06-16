@@ -109,7 +109,7 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
-                console.log(tg.initDataRaw.user.first_name_name);
+                console.log(tg.initDataUnsafe.user.first_name_name);
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
