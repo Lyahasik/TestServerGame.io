@@ -24,9 +24,7 @@
       </div>
     </div>
     <script>
-
-      import { retrieveLaunchParams } from '@tma.js/sdk';
-      const { initDataRaw } = retrieveLaunchParams();
+      let tg = window.Telegram.WebApp;
 
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
@@ -109,6 +107,7 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
+                console.log(tg.initDataRaw.user.first_name_name);
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
