@@ -29,6 +29,7 @@
     <script>
 
       var telegramApp = window.Telegram.WebApp;
+      var myGameInstance = null;
 
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
@@ -110,6 +111,7 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
+                myGameInstance = unityInstance;
                 loadingBar.style.display = "none";
               }).catch((message) => {
                 alert(message);
