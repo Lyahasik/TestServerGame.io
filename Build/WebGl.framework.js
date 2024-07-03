@@ -4857,15 +4857,15 @@ var ASM_CONSTS = {
   function _LoadingUserExtern() {
           var user = telegramApp.initDataUnsafe.user;
       
-          let userData = {
-              TelegramId: user.id,
-              FirstName: user.first_name,
-              LastName: user.last_name,
-              InviteId: telegramApp.initDataUnsafe.start_param
-          };
+          // let userData = {
+          //     TelegramId: user.id,
+          //     FirstName: user.first_name,
+          //     LastName: user.last_name,
+          //     InviteId: telegramApp.initDataUnsafe.start_param
+          // };
       
           console.log('Данные игрока ' + user.id + ' ' + user.first_name + ' ' + user.last_name + ' ' + telegramApp.initDataUnsafe.start_param);
-          myGameInstance.SendMessage('DataBase', 'LoadingUser', userData);
+          myGameInstance.SendMessage('DataBase', 'LoadingUser', user.id);
       }
 
   function _Send(index, arrayPtr, offset, length) {
