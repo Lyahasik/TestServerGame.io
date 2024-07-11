@@ -3,6 +3,7 @@
   <head>
 
   
+  
               <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
 
@@ -68,11 +69,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/No_logo_unit.loader.js";
+      var loaderUrl = buildUrl + "/SpeedTest.loader.js";
       var config = {
-        dataUrl: buildUrl + "/No_logo_unit.data.unityweb",
-        frameworkUrl: buildUrl + "/No_logo_unit.framework.js.unityweb",
-        codeUrl: buildUrl + "/No_logo_unit.wasm.unityweb",
+        dataUrl: buildUrl + "/SpeedTest.data.unityweb",
+        frameworkUrl: buildUrl + "/SpeedTest.framework.js.unityweb",
+        codeUrl: buildUrl + "/SpeedTest.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "ninja",
@@ -108,16 +109,16 @@
         canvas.style.width = "960px";
         canvas.style.height = "600px";
       }
-          var myGameInstance = null;
-      loadingBar.style.display = "block";
 
+      loadingBar.style.display = "block";
+          var myGameInstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
-                      myGameInstance = unityInstance;
+                   myGameInstance = unityInstance;
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
