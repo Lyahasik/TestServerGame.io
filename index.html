@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+  
+              <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
+
+  <script type="text/javascript">
+  const AdController = window.Adsgram.init({ blockId: "674", debug:true });
+  </script>
+
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | ninja</title>
@@ -99,13 +107,14 @@
       }
 
       loadingBar.style.display = "block";
-
+                var myGameInstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
+                     myGameInstance = unityInstance;
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
